@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dynamic Checklist </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 1200px;
+      margin: auto;
+      page-break-after: always;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.2);
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Dynamic Checklist </h2>
+    <table>
+      <tr>
+        <td>Model:</td>
+        <td><input type="text" placeholder="Enter Model"></td>
+        <td>STB:</td>
+        <td><input type="text" placeholder="Enter STB"></td>
+      </tr>
+      <tr>
+        <td>Customer Name:</td>
+        <td colspan="3"><input type="text" placeholder="Enter Customer Name"></td>
+      </tr>
+      <tr>
+        <td>Order Confirmation Date:</td>
+        <td><input type="date"></td>
+        <td>Delivery Date:</td>
+        <td><input type="date"></td>
+      </tr>
+    </table>
+
+    <h3>Fixed Machine Components</h3>
+    <table>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Item</th>
+        <th>Specifications</th>
+        <th>Quantity</th>
+        <th>Checked (✔)</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>UTM Machine</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Limit Sensor (Up)</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Limit Sensor (Down)</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Magnet for Sensor</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Loadcell 1 Capacity: <input type="number" placeholder="KG"></td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Loadcell 2 Capacity: <input type="number" placeholder="KG"></td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Loadcell 3 Capacity: <input type="number" placeholder="KG"></td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>RS232 Cable-Communication</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Cadyce Cable</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>10.1</td>
+        <td>Adaptor M24-M__</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>10.2</td>
+        <td>Adaptor M12-M__</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>10.3</td>
+        <td>Adaptor M8-M__</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>LocK Nut for Adapter</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+
+    <h3>Optional Attachments for Pull Off Tests</h3>
+    <table>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Components</th>
+        <th>Specifications</th>
+        <th>Quantity</th>
+        <th>Checked (✔)</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>Pull1</td>
+        <td>Base Fixture</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Pull2</td>
+        <td>Dolly Plate</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Pull3</td>
+        <td>Puller</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Pull4</td>
+        <td>Dolly Pin</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Pull5</td>
+        <td>Knob (M8)</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Pull6</td>
+        <td>M____to M12 Adaptor</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Pull7</td>
+        <td>Standard Weight 2kg SS304</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+
+    <h3>Optional Attachments for Shear Test</h3>
+    <table>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Components</th>
+        <th>Specifications</th>
+        <th>Quantity</th>
+        <th>Checked (✔)</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>Shear1</td>
+        <td>Base Fixture with Knob</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Shear2</td>
+        <td>Compression Plate</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Shear3</td>
+        <td>3mm Spacer</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+
+    <h3>Attachments for Deformability Test</h3>
+    <table>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Components</th>
+        <th>Specifications</th>
+        <th>Quantity</th>
+        <th>Checked (✔)</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>Deform1</td>
+        <td>Deformation Base Frame </td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Deform2</td>
+        <td>Semi-Circle Inteder</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Deform3</td>
+        <td>Template A</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Deform4</td>
+        <td>Template B</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Deform5</td>
+        <td>Standard Weight 10kg MS</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Deform6</td>
+        <td>M____ Adaptor for Inteder</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+
+    <h3>Attachments for Slip Test</h3>
+    <table>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Components</th>
+        <th>Specifications</th>
+        <th>Quantity</th>
+        <th>Checked (✔)</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>Slip1</td>
+        <td>Clamps </td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Slip2</td>
+        <td>Knob (M8)</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Slip3</td>
+        <td>Straight Edge 25x12x300MM</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Slip4</td>
+        <td>25x25x10mm Spacer</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Slip5</td>
+        <td>Standard Weight 5kg SS304</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+
+    <h3>Attachments for 3point Bending Test</h3>
+    <table>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Components</th>
+        <th>Specifications</th>
+        <th>Quantity</th>
+        <th>Checked (✔)</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>Bending1</td>
+        <td>T-Slotted Base Plate</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Bending2</td>
+        <td>Bottom Plates</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Bending3</td>
+        <td>Top Plate</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Bending4</td>
+        <td>M__ Adaptor for Top Plates</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Bending5</td>
+        <td>Bolts for Bottom Plate</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Bending6</td>
+        <td>Roller Dia_____mm</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Bending7</td>
+        <td>Roller Dia_____mm</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Bending8</td>
+        <td>Lock Nut for Adapter</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+
+    <h3>Attachments for Wedge Grip Test</h3>
+    <table>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Components</th>
+        <th>Specifications</th>
+        <th>Quantity</th>
+        <th>Checked (✔)</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>WG1</td>
+        <td>Wedge Grip</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>WG2</td>
+        <td>Jaws for Flate Sample</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>WG3</td>
+        <td>Jaws for Round Sample</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>WG4</td>
+        <td>M__ Adapter for Loadcell</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>WG5</td>
+        <td>M__ Adapter for Bottom</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>WG6</td>
+        <td>Lock Nut</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>WG7</td>
+        <td>RPin for Adapter</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+
+    <h3>Attachments for Vice Grip Test</h3>
+    <table>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Components</th>
+        <th>Specifications</th>
+        <th>Quantity</th>
+        <th>Checked (✔)</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>VG1</td>
+        <td>Vice Grip</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>VG2</td>
+        <td>Inserts</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>VG3</td>
+        <td>M__ Adapter for Loadcell</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>VG4</td>
+        <td>M__ Adapter for Bottom</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>VG5</td>
+        <td>Lock Nut</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+
+    <h3>Attachments for Compression Test</h3>
+    <table>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Components</th>
+        <th>Specifications</th>
+        <th>Quantity</th>
+        <th>Checked (✔)</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>CMPL1</td>
+        <td>Compression Plate</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>CMPL2</td>
+        <td>Lock Nut</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>CMPL3</td>
+        <td>M__ Adapter for Loadcell</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>CMPL4</td>
+        <td>M__ Adapter for Bottom</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+
+    <h3>Other Accessories</h3>
+    <table>
+      <tr>
+        <th>Fixed</th>
+        <th>Components</th>
+        <th>Specifications</th>
+        <th>Quantity</th>
+        <th>Checked (✔)</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>OSUI</td>
+        <td>Software Testing</td>
+        <td>Multiple Parameter</td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Adapter1</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Adapter2</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Allenkey Box</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th></th>
+        <th>Documents</th>
+        <th>Specifications</th>
+        <th>Quantity</th>
+        <th>Checked (✔)</th>
+        <th>Remarks</th>
+      </tr>
+      <tr>
+        <td>MCD</td>
+        <td>Machine Details</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>UM</td>
+        <td>User Manual</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>INV</td>
+        <td>Invoices</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>DN</td>
+        <td>Delivery Note</td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>LCC</td>
+        <td>Calibration Certificates</td>
+        <td>NABL/NON-NABL</td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>LCC</td>
+        <td>Calibration Certificates</td>
+        <td>NABL/NON-NABL</td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>LCC</td>
+        <td>Calibration Certificates</td>
+        <td>NABL/NON-NABL</td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>LCC</td>
+        <td>Calibration Certificates</td>
+        <td>Displacement</td>
+        <td><input type="number" value="1"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+    <button class="btn" onclick="generatePDF()">Print as PDF</button>
+  </div>
+
+  <script>
+    function generatePDF() {
+      window.print();
+    }
+  </script>
+</body>
+</html>
